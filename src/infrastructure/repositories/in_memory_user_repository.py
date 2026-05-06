@@ -19,8 +19,6 @@ class InMemoryUserRepository(UserRepository):
 
     async def update(self, user: User) -> User:
         if user.id in self._users:
-            self._users[user.to_dict() if hasattr(user, 'to_dict') else user] = user # This is a bit messy, let's fix it later or just use the object
-            # Actually, since it's the same object reference in memory for this simple case:
             self._users[user.id] = user
             return user
         return None

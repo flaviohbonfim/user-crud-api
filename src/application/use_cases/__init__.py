@@ -8,7 +8,8 @@ class CreateUserUseCase:
         self.user_repository = user_repository
 
     async def execute(self, name: str, email: str, phone: str) -> User:
-        user = User(name=name, email=email, phone=phone)
+        from uuid import uuid4
+        user = User(id=uuid4(), name=name, email=email, phone=phone)
         return await self.user_repository.save(user)
 
 class GetUserUseCase:
