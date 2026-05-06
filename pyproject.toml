@@ -1,0 +1,24 @@
+[project]
+name = "test-app-crud"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Flávio Henrique Bonfim",email = "flaviohbonfim@live.com"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.136.1,<0.137.0)",
+    "uvicorn (>=0.46.0,<0.47.0)",
+    "pydantic[email] (>=2.13.4,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
